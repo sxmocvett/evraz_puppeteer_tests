@@ -7,7 +7,8 @@ dotenv.config();
 (async () => {
     let browser;
     try {
-        // запускаем браузер (с отключенной песочницей
+        // запускаем браузер (с отключенной песочницей,
+        // важно чтобы не ловить ошибку при запуске в docker)
         console.log('Браузер запускается...');
         browser = await puppeteer.launch({
             headless: true,
@@ -15,6 +16,7 @@ dotenv.config();
         });
         console.log('Браузер запущен.');
 
+        // ожидание открытия страницы
         const page = await browser.newPage();
         console.log('Новая страница открыта.');
 

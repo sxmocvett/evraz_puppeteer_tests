@@ -3,6 +3,6 @@ services:
   puppeteer-test:
     build: .
     container_name: puppeteer-test
-    env_file: .env  # Указываем файл с переменными окружения
+    env_file: .env
     volumes:
-      - ./puppeteer-screenshots:/app/screenshots  # Монтируем локальную директорию
+      - ./puppeteer-screenshots:/app/screenshots
